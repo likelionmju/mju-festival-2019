@@ -37,14 +37,14 @@ https://github.com/likelionmyongji/mju_festival.git
 
 clone한 폴더는 gitignore를 통하여 가상환경 없이 업로드 되었기 때문에 가상환경을 새로 생성해주어야 합니다. 생성 후 가상환경을 실행해 줍니다.
 
-#### Windows
+##### Windows
 
 ```
 python -m venv venv
 source venv/Scripts/activate
 ```
 
-#### macOS
+##### macOS
 
 ```
 python3 -m venv venv
@@ -64,7 +64,61 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-개발을 마칠 시에는 아래의 명령어를 통하여 가상환경을 종료합니다.
+### 3. Django에서 자주 사용되는 명령어
+
+---
+
+#### 가상환경 실행
+
+##### Windows
+
+```
+source venv/Scripts/activate
+```
+
+##### macOS
+
+```
+source venv/bin/activate
+```
+
+#### 프로젝트에 App 추가
+
+```
+python manage.py startapp 앱이름
+```
+
+#### 서버 켜기
+
+```
+python manage.py runserver
+```
+
+#### migrations 만들기
+
+```
+python manage.py makemigrations
+```
+
+#### DB migrate
+
+```
+python manage.py migrate
+```
+
+#### 관리자(admin) 계정 생성
+
+```
+python manage.py createsuperuser
+```
+
+#### Static 파일 collecting
+
+```
+python manage.py collectstatic
+```
+
+#### 가상환경 종료
 
 ```
 deactivate
