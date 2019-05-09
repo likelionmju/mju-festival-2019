@@ -32,7 +32,7 @@
 먼저, 터미널을 통하여 레파지토리를 다운로드할 폴더로 이동합니다. 그 다음 아래의 명령어를 통하여 레파지토리를 clone 해줍니다.
 
 ```
-https://github.com/likelionmyongji/mju_festival.git
+git clone https://github.com/likelionmyongji/mju_festival.git
 ```
 
 clone한 폴더는 gitignore를 통하여 가상환경 없이 업로드 되었기 때문에 가상환경을 새로 생성해주어야 합니다. 생성 후 가상환경을 실행해 줍니다.
