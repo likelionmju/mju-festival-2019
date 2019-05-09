@@ -1,7 +1,7 @@
 2019 명지대학교 인문캠퍼스 대동제 소개 서비스
 ---------------------------------------------
 
-![Version](https://img.shields.io/badge/Version-1.0.0-green.svg) ![Django](https://img.shields.io/badge/Python-Django-darkgreen.svg)
+![Version](https://img.shields.io/badge/Version-1.0.0-green.svg) ![Django](https://img.shields.io/badge/Python-Django-darkgreen.svg) ![Likelion](https://img.shields.io/badge/Likelion-MJU(Seoul)-informational.svg)
 
 ### 1. INFO
 
@@ -15,10 +15,57 @@
 
 #### 개발 포지션
 
--	Front-end: 한종우
+-	Project manager: 반정훈, 한종우
 
--	Back-end: 반정훈
+-	Front-end: 김혜현, 박건희, 서유림, 최은지, 함범준
+
+-	Back-end: 변현홍, 조형서, 황낙주
 
 -	Designer: 한연희
 
--	Director: 김만수
+-	Director: 김만수, 전기석
+
+### 2. 개발 환경 구성
+
+---
+
+먼저, 터미널을 통하여 레파지토리를 다운로드할 폴더로 이동합니다. 그 다음 아래의 명령어를 통하여 레파지토리를 clone 해줍니다.
+
+```
+https://github.com/likelionmyongji/mju_festival.git
+```
+
+clone한 폴더는 gitignore를 통하여 가상환경 없이 업로드 되었기 때문에 가상환경을 새로 생성해주어야 합니다. 생성 후 가상환경을 실행해 줍니다.
+
+#### Windows
+
+```
+python -m venv venv
+source venv/Scripts/activate
+```
+
+#### macOS
+
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+이후, pip 패키지를 통하여 Django를 가상환경 내에 다운로드해 줍니다.(이 작업은 처음 가상환경 생성 시, 한 번만 해 주시면 됩니다.)
+
+```
+pip install django
+```
+
+Django 다운로드 후, migrate와 runserver를 한 번씩 실행합니다.
+
+```
+python manage.py migrate
+python manage.py runserver
+```
+
+개발을 마칠 시에는 아래의 명령어를 통하여 가상환경을 종료합니다.
+
+```
+deactivate
+```
