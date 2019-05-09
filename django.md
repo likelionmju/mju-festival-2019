@@ -1,23 +1,23 @@
 Django 명령어 모음
 ------------------
 
-### 가상환경 실행
+#### 가상환경 실행
 
 ---
 
-#### Windows
+##### Windows
 
 ```
 source venv/Scripts/activate
 ```
 
-#### macOS
+##### macOS
 
 ```
 source venv/bin/activate
 ```
 
-### 프로젝트에 App 추가
+#### 프로젝트에 App 추가
 
 ---
 
@@ -25,7 +25,7 @@ source venv/bin/activate
 python manage.py startapp 앱이름
 ```
 
-### 서버 켜기
+#### 서버 켜기
 
 ---
 
@@ -33,7 +33,7 @@ python manage.py startapp 앱이름
 python manage.py runserver
 ```
 
-### migrations 만들기
+#### migrations 만들기
 
 ---
 
@@ -41,7 +41,7 @@ python manage.py runserver
 python manage.py makemigrations
 ```
 
-### DB migrate
+#### DB migrate
 
 ---
 
@@ -49,7 +49,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 관리자(admin) 계정 생성
+#### 관리자(admin) 계정 생성
 
 ---
 
@@ -57,7 +57,7 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-### Static 파일 collecting
+#### Static 파일 collecting
 
 ---
 
