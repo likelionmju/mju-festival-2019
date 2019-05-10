@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'page.apps.PageConfig',
     'lost_property.apps.LostPropertyConfig',
     'board.apps.BoardConfig',
+    'mjworld.apps.MjworldConfig',
 ]
 
 MIDDLEWARE = [
