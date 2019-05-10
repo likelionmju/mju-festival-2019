@@ -9,6 +9,7 @@ import page.views
 import lost_property.views
 import board.views
 import mjworld.views
+import comment.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -17,5 +18,6 @@ urlpatterns = [
     path('lost/', include('lost_property.urls')),
     path('board/', include('board.urls')),
     path('mjworld/', include('mjworld.urls')),
+    path('comment/', include('comment.urls')),
 
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
