@@ -63,17 +63,17 @@ source venv/bin/activate
 pip install django
 ```
 
-Django 다운로드 후, migrate와 runserver를 한 번씩 실행합니다.
+그다음, 프로젝트에서 필요한 pip 패키지들을 다운로드해 줍니다.
+
+```
+pip install Pillow
+```
+
+다운로드 후, migrate와 runserver를 한 번씩 실행합니다.
 
 ```
 python manage.py migrate
 python manage.py runserver
-```
-
-서버를 끄고, 프로젝트에서 필요한 pip 패키지를 다운로드해 줍니다.
-
-```
-pip install Pillow
 ```
 
 ### 3. Django에서 자주 사용되는 명령어
