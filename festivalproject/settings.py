@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'lost_property.apps.LostPropertyConfig',
     'board.apps.BoardConfig',
     'mjworld.apps.MjworldConfig',
+    'comment.apps.CommentConfig',
 ]
 
 MIDDLEWARE = [
