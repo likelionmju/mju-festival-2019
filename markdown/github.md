@@ -13,6 +13,12 @@ git pull
 git add 파일명
 ```
 
+#### Stage 취소
+
+```
+git reset
+```
+
 #### Commit(메세지는 작업한 내용이 잘 드러나게 작성)
 
 ```
