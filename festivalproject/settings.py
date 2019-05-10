@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'page.apps.PageConfig',
+    'lost_property.apps.LostPropertyConfig',
 ]
 
 MIDDLEWARE = [
