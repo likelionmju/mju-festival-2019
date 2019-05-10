@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for mjworld in mjworlds %}
+
+<div class="card" style="width: 18rem;">
+    <img src="{{ mjworld.image.url }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ mjworld.title }}</h5>
+        <p class="card-text">{{ mjworld.content }}</p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail">더 알아보기</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="detaillLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailLabel">{{ mjworld.title }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                주소 : {{ mjworld.address }}
+                <br>
+                종류 : {{ mjworld.kind }}
+                <br>
+                전화번호 : {{ mjworld.tel }}
+                <br>
+                가격대 : {{ mjworld.price }}
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
