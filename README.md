@@ -35,7 +35,7 @@
 
 ---
 
-먼저, 터미널을 통하여 레파지토리를 다운로드할 폴더로 이동합니다. 그 다음 아래의 명령어를 통하여 레파지토리를 clone 해줍니다.
+먼저, 터미널을 통하여 레파지토리를 다운로드할 폴더로 이동합니다. 그 다음 아래의 명령어를 통하여 레파지토리를 clone 해 줍니다.
 
 ```
 git clone https://github.com/likelionmyongji/mju_festival.git
@@ -68,6 +68,12 @@ Django 다운로드 후, migrate와 runserver를 한 번씩 실행합니다.
 ```
 python manage.py migrate
 python manage.py runserver
+```
+
+서버를 끄고, 프로젝트에서 필요한 pip 패키지를 다운로드해 줍니다.
+
+```
+pip install Pillow
 ```
 
 ### 3. Django에서 자주 사용되는 명령어
