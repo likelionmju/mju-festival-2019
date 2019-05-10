@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'page.apps.PageConfig',
     'lost_property.apps.LostPropertyConfig',
+    'board.apps.BoardConfig',
 ]
 
 MIDDLEWARE = [
