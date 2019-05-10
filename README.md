@@ -80,10 +80,10 @@ python manage.py runserver
 
 ---
 
-[Django에서 자주 사용되는 명령어](markdown/django.md)
+Django 관련 명령어는 [여기](markdown/django.md)를 참고해 주세요.
 
 ### 4. Github 명령어
 
 ---
 
-[Github 명령어](markdown/github.md)
+Github 명령어는 [여기](markdown/github.md)를 참고해 주세요.
