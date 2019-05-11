@@ -13,6 +13,7 @@ def new(request):
         form = LostForm(request.POST)
         if form.is_valid():
             lost = form.save(commit=False)
+            lost.author = request.user
             lost.pub_date = timezone.now()
             lost.save()
         return redirect('lost_home')
@@ -21,5 +22,5 @@ def new(request):
         return render(request, 'lost_new.html', {'form':form})
 
 def detail(request, lost_id):
-    stuffs = get_object_or_404(Lost, pk=lost_id)
-    return render(request, 'lost_detail.html', {'stuffs': stuffs})
+    stuff = get_object_or_404(Lost, pk=lost_id)
+    return render(request, 'lost_detail.html', {'stuff': stuff})

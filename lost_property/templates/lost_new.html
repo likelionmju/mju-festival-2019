@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
-    <div class='container'>
-        <a href="{%url 'lost_home'%}">
-            <button class="btn btn-dark" value="Back" type="button">Back</button>
-        </a>
+<div class='container'>
+    <a href="{%url 'lost_home'%}">
+        <button class="btn btn-dark" value="Back" type="button">Back</button>
+    </a>
 
-        <form method='POST'>
-            {% csrf_token %}
-            <table>
-                {{form.as_table}}
-            </table>
-            <br>
-            <input class="btn btn-dark" type="submit" value="제출하기">
-        </form>
-    </div>
+    <form method='POST'>
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input class="btn btn-dark" type="submit" value="제출하기">
+    </form>
+</div>
 
 
 {% endblock %}
