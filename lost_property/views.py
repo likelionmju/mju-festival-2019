@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.utils import timezone
 from .models import Lost
+from .forms import LostForm
 
 # Create your views here.
 def home(request):
@@ -7,7 +9,16 @@ def home(request):
     return render(request, 'lost.html', {'stuffs' : stuffs})
 
 def new(request):
-    return render(request, 'lost_new.html')
+    if request.method == 'POST':
+        form = LostForm(request.POST)
+        if form.is_valid():
+            lost = form.save(commit=False)
+            lost.pub_date = timezone.now()
+            lost.save()
+        return redirect('lost_home')
+    else:
+        form = LostForm()
+        return render(request, 'lost_new.html', {'form':form})
 
 def detail(request):
     return render(request, 'lost_detail.html')
