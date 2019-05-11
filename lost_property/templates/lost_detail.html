@@ -47,7 +47,8 @@
         
         <!--본인 글인 경우에만 삭제 가능-->
         {% if user.is_authenticated and user.username == stuff.author.username %}
-        <a class="btn btn-dark" href="{%url 'lost_delete' stuff.id %}">삭제</a>
+        <a class="btn btn-info" href="{% url 'lost_edit' stuff.id %}">수정</a>
+        <a class="btn btn-danger" href="{%url 'lost_delete' stuff.id %}">삭제</a>
         {% endif %}
 </div>
 

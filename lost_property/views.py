@@ -31,3 +31,18 @@ def delete(request, stuff_id):
         return redirect('lost_home')
     else:
         return redirect('lost_detail', stuff_id)
+
+def edit(request, stuff_id):
+    stuff = get_object_or_404(Lost, pk=stuff_id)
+    if request.method == 'POST':
+        stuff.content = request.POST['content']
+        # image 파일이 있으면 post 객체에 저장
+        if 'image' in request.FILES:
+            stuff.image = request.FILES['image']
+        stuff.save()
+        return redirect('/lost/detail/'+str(stuff.id))
+    else:
+        if stuff.author == request.user:
+            return render(request, 'lost_edit.html', {'stuff':stuff})
+        else:
+            return redirect('lost_home')
