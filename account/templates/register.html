@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 center-align">
+      <br>
+      <div class="card">
+        <div class="col-md-10 center-align">
+          <br>
+          <h1 class="text-center">회원가입</h1>
+          <form action="{% url 'register' %}" method="POST" enctype="multipart/form-data" class="p-3">
+            {% csrf_token %}
+            <br>
+            <label for="id">
+              <h4>아이디</h4>
+            </label>
+            <input type="text" name="id" class="form-control" placeholder="아이디를 입력해주세요">
+            <br>
+            <label for="password">
+              <h4>비밀번호</h4>
+            </label>
+            <input type="password" name="pw" class="form-control" placeholder="비밀번호를 입력해주세요">
+            <br>
+            <label for="confirm-password">
+              <h4>비밀번호 확인</h4>
+            </label>
+            <input type="password" name="confirm-pw" class="form-control" placeholder="비밀번호를 다시 한 번 입력해주세요">
+            <br>
+            <div class="form-group text-center">
+              <input class="btn btn-outline-primary" type="submit" value="회원가입">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

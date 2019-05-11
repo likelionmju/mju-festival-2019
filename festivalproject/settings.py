@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'board.apps.BoardConfig',
     'mjworld.apps.MjworldConfig',
     'comment.apps.CommentConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
