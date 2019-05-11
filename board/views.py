@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from .models import Board
 
 # Create your views here.
 
 def home(request):
-    return render(request, "post.html")
+    posts = Board.objects.all()
+    return render(request, "post.html", {'posts':posts})
 
 #글작성 (new)
 def post_new(request):
