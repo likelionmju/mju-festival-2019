@@ -20,6 +20,14 @@ def new(request):
     else:
         return render(request, 'lost_new.html')
 
-def detail(request, lost_id):
-    stuff = get_object_or_404(Lost, pk=lost_id)
+def detail(request, stuff_id):
+    stuff = get_object_or_404(Lost, pk=stuff_id)
     return render(request, 'lost_detail.html', {'stuff': stuff})
+
+def delete(request, stuff_id):
+    stuff = get_object_or_404(Lost, pk=stuff_id)
+    if stuff.author == request.user:
+        stuff.delete()
+        return redirect('lost_home')
+    else:
+        return redirect('lost_detail', stuff_id)

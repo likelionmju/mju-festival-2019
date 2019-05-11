@@ -1,14 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-        <a href="{%url 'lost_home'%}">
-                <button class="btn btn-dark" value="Back" type="button">Back</button>
-        </a>
 
-        <br>
-        <p>
-                <h1>{{ stuff.title }}</h1>
-        </p>
+        <h1>{{ stuff.title }}</h1>
         <p>{{ stuff.author }}</p>
         <p>{{ stuff.pub_date }}</p>
         {% if stuff.image %}
@@ -39,15 +33,22 @@
         {% endif %}
         <br>
         {% for comment in stuff.comments.all %}
-          <label>{{comment.author}}</strong></a>
-            {{comment.content}}</label>
-          <a class="btn-sm float-right" href="{% url 'comment_lost_delete' stuff.id comment.id %}">
-            삭제
-          </a>
-          <br>
-          {% empty %}
-          <label style="color:gray;">아직 댓글이 없습니다</label>
-          {% endfor %}
+        <label>{{comment.author}}</strong></a>
+                {{comment.content}}</label>
+        <a class="btn-sm float-right" href="{% url 'comment_lost_delete' stuff.id comment.id %}">
+                삭제
+        </a>
+        <br>
+        {% empty %}
+        <label style="color:gray;">아직 댓글이 없습니다</label>
+        {% endfor %}
+        <br>
+        <a class="btn btn-dark" href="{%url 'lost_home'%}">이전으로</a>
+        
+        <!--본인 글인 경우에만 삭제 가능-->
+        {% if user.is_authenticated and user.username == stuff.author.username %}
+        <a class="btn btn-dark" href="{%url 'lost_delete' stuff.id %}">삭제</a>
+        {% endif %}
 </div>
 
 {% endblock %}
