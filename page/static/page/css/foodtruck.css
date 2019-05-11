@@ -1,6 +1,63 @@
-body {
-    text-align:center;
+@font-face { font-family: 'Handon3gyeopsal600g'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+* {
+    font-family: 'Handon3gyeopsal600g';
 }
-h1{
-    font-style: italic
+
+h5 {
+    font-size: 2rem!important;
+    text-align: center;
+}
+
+/* h2 {
+    text-align: center;
+    color: white;
+} */
+
+.card-title {
+    margin-top: 10px;
+}
+
+.col-md-8 {
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.banner {
+    height: 350px;
+    background: url(https://www.easyslidertexas.com/uploads/2017/04/06/truck-1.jpg);
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+    margin-bottom: 40px;
+}
+
+.card-body {
+    margin-left: 20px;
+}
+
+.no-gutters {
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+    img {
+        position:absolute;
+        max-width:100%; max-height:100%;
+        width:auto; height:auto;
+        margin:auto;
+        top:0; bottom:0; left:0; right:0;
+    
+    }
+    
+    .col-md-4 {
+        position:relative;
+    }
 }
