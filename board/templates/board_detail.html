@@ -1,15 +1,20 @@
-{% block content%}
-<p><h1>제목: {{ board_detail.title }}</h1></p>
-<p>작성자: {{ board_detail.author }}</p>
-<p>일시: {{ board_detail.pub_date }}</p>
-{% if board_detail.image %}
-    <img src="{{ board_detail.image.url }}" alt = "image" width="300">
-{% else %}
-    
-{% endif %}
-<!-- 작성한 글을 그대로 받아오기 위한 pre tag -->
-<p><pre>{{ board_detail.content }}</pre></p>
+{% extends 'base.html' %}
+{% load static %}
 
-<a href = "{% url 'board_home' %}">Back</a>
+{% block content%}
+
+<div class="container">
+  <p><h3>제목: {{ board_detail.title }}</h3></p>
+  <p>작성자: {{ board_detail.author }}</p>
+  <p>일시: {{ board_detail.pub_date }}</p>
+  {% if board_detail.image %}
+    <img src="{{ board_detail.image.url }}" alt = "image" width="300">
+    
+  {% endif %}
+  <!-- 작성한 글을 그대로 받아오기 위한 pre tag -->
+  <p><pre>{{ board_detail.content }}</pre></p>
+
+  <a href = "{% url 'board_home' %}">Back</a>
+</div>
 
 {% endblock %}
