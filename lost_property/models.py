@@ -14,4 +14,4 @@ class Lost(models.Model):
         return self.title
     
     def summary(self):
-        return self.content
+        return self.content[:30]
