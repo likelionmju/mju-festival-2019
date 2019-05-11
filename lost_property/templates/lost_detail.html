@@ -1,13 +1,20 @@
-<a href="{%url 'lost_home'%}">Back</a>
+{% extends 'base.html' %}
+{% block content %}
+        <div class="container">
+                <a href="{%url 'lost_home'%}">
+                        <button class="btn btn-dark" value="Back" type="button">Back</button>
+                </a>
 
-<br>
-<p><h1>{{ stuffs.title }}</h1></p>
-<p>{{ stuffs.author }}</p>
-<p>{{ stuffs.pub_date }}</p>
-<img class="" src="{{ stuffs.image.url }}" alt="image" width="300">
-<p>{{ stuffs.content }}</p>
-<p>{% if stuffs.found == False %}
-        아직 찾는중입니다
-        {% else %}
-        찾음
-        {% endif %}</p>
+                <br>
+                <p><h1>{{ stuffs.title }}</h1></p>
+                <p>{{ stuffs.author }}</p>
+                <p>{{ stuffs.pub_date }}</p>
+                <img class="" src="{{ stuffs.image.url }}" alt="image" width="300">
+                <p>{{ stuffs.content }}</p>
+                <p>{% if stuffs.found == False %}
+                        아직 찾는중입니다
+                        {% else %}
+                        찾음
+                        {% endif %}</p>
+        </div>
+{% endblock %}

@@ -2,9 +2,11 @@
 {% load static %}
 
 {% block content %}
-
-
     <div class='container'>
+        <a href="{%url 'lost_home'%}">
+            <button class="btn btn-dark" value="Back" type="button">Back</button>
+        </a>
+
         <form method='POST'>
             {% csrf_token %}
             <table>
