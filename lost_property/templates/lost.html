@@ -3,7 +3,7 @@
 
 {% for s in stuffs %}
 <div class="container">
-    <h1>{{ s.title }}</h1>
+    <h1><p><a href="{% url 'lost_detail' Lost.id %}">{{ s.title }}</a></p></h1>
     <p>{{ s.author }}</p>
     <p>{{ s.pub_date }}</p>
     <p>{{ s.summary }}</p>

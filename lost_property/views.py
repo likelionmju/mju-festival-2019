@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Lost
 from .forms import LostForm
@@ -21,4 +21,5 @@ def new(request):
         return render(request, 'lost_new.html', {'form':form})
 
 def detail(request):
-    return render(request, 'lost_detail.html')
+    lost_detail = get_object_or_404(Lost, pk=lost_id)
+    return render(request, 'lost_detail.html', {'lost_detail': lost_detail})
