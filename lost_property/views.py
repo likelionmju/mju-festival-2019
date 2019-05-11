@@ -20,6 +20,6 @@ def new(request):
         form = LostForm()
         return render(request, 'lost_new.html', {'form':form})
 
-def detail(request):
-    lost_detail = get_object_or_404(Lost, pk=lost_id)
-    return render(request, 'lost_detail.html', {'lost_detail': lost_detail})
+def detail(request, lost_id):
+    stuffs = get_object_or_404(Lost, pk=lost_id)
+    return render(request, 'lost_detail.html', {'stuffs': stuffs})
