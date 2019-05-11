@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'page/css/lineup.css' %}" type="text/css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!-- font -->
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!-- 아래부터 작성하세요 -->
+<div class='imgContainer'>
+    <img src= "{% static 'page/images/edm.jpg' %}" alt='festival' class='img' />  
+    <div class='imgText'>
+        <p class='mjText'>
+            Myeongji Festa
+        </p>
+    </div>
+</div>
+<h1 class='title'> 축제 라인업 </h1>    
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <p class='date'>5/14</p>
+            <div class='singerContainer'>
+                <img class='singerImg' src="{%  static 'page/images/yoonha.jpg' %}" alt='yoonha'/>
+                <div class='singerText'>
+                    <p class='singer'>윤하</p>
+                </div>
+            </div>
+            <div class='singerContainer'>
+                <img class='singerImg' src="{% static 'page/images/samD.jpg' %}" alt='samD'/>
+                    <div class='singerText'>
+                        <p class='singer'>쌈디</p>
+                    </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <p class='date'>5/15</p>
+            <div class='singerContainer'>
+                <img class='singerImg' src="{% static 'page/images/ikon.jpg' %}" alt='ikon'/>
+                    <div class='singerText'>
+                        <p class='singer'>아이콘</p>
+                    </div>
+                </div>
+                <div class='singerContainer'>
+                    <img class='singerImg' src="{% static 'page/images/mondaykiz.jpg'%}" alt='mondaykiz'/>
+                        <div class='singerText'>
+                            <p class='singer'>먼데이키즈</p>
+                        </div>
+                </div>
+        </div>
+        <div class="carousel-item">
+            <p class='date'>5/16</p>
+            <div class='singerContainer'>
+                <img class='singerImg' src="{% static 'page/images/hong.jpeg' %}" alt='hong'/>
+                    <div class='singerText'>
+                        <p class='singer'>홍진영</p>
+                    </div>
+            </div>
+            <div class='singerContainer'>
+                <img class='singerImg' src="{% static 'page/images/bong.jpg' %}" alt='bong'/>
+                    <div class='singerText'>
+                        <p class='singer'>길구봉구</p>
+                    </div>
+            </div>
+        </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+{% endblock %}

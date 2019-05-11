@@ -14,7 +14,7 @@ import comment.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', page.views.home, name="home"),
-    path('', include('page.urls')),
+    path('info/', include('page.urls')),
     path('lost/', include('lost_property.urls')),
     path('board/', include('board.urls')),
     path('mjworld/', include('mjworld.urls')),
