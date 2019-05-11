@@ -7,6 +7,7 @@
   <p><h3>제목: {{ board_detail.title }}</h3></p>
   <p>작성자: {{ board_detail.author }}</p>
   <p>일시: {{ board_detail.pub_date }}</p>
+  <p>목적: {{ board_detail.purpose }}</p>
   {% if board_detail.image %}
     <img src="{{ board_detail.image.url }}" alt = "image" width="300">
     

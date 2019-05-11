@@ -3,8 +3,7 @@ from .models import Board
 from .forms import BoardForm
 from django.utils import timezone
 
-# Create your views here.
-
+#자유게시판 홈(board)
 def home(request):
     boards = Board.objects.all()
     return render(request, "board.html", {'boards':boards})
@@ -19,7 +18,7 @@ def new(request):
             lost.save()
         return redirect('board_home')
     else:
-        form = BoardForm()   
+        form = BoardForm()
         return render(request, "board_new.html", {'form':form})
 
 #상세보기(detailed view)
