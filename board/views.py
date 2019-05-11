@@ -5,7 +5,7 @@ from django.utils import timezone
 
 #자유게시판 홈(board)
 def home(request):
-    boards = Board.objects.all()
+    boards = Board.objects.all().order_by('-id')
     return render(request, "board.html", {'boards':boards})
 
 #글작성 (new)

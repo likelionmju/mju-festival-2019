@@ -9,7 +9,7 @@
     <a href="{% url 'board_new' %}">새글쓰기</a>
 
     {% for b in boards %}
-        <a href="{% url 'board_detail' b.id %}"> <h3>[{{ b.purpose }}] 제목: {{ b.title }} </h3></a>
+        <h3> [{{ b.purpose }}] <a href="{% url 'board_detail' b.id %}"> 제목: {{ b.title }} </a></h3>
         <p>작성자: {{ b.author }}</p>
         <p>일시: {{ b.pub_date }}</p>
     {% endfor %}
