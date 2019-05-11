@@ -1,16 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Board
 
 # Create your views here.
 
 def home(request):
-    posts = Board.objects.all()
-    return render(request, "post.html", {'posts':posts})
+    boards = Board.objects.all()
+    return render(request, "board.html", {'boards':boards})
 
 #글작성 (new)
-def post_new(request):
-    return render(request, "post_new.html")
+def new(request):
+    return render(request, "board_new.html")
 
 #상세보기(detailed view)
-def post_detail(request):
-    return render(request, "post_detail.html")
+def detail(request):
+    board_detail = get_object_or_404(Board, pk=board_id)
+    return render(request, "board_detail.html", {'board_detail':board_detail})
