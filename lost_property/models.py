@@ -8,7 +8,7 @@ class Lost(models.Model):
     pub_date = models.DateTimeField('publish')
     image = models.ImageField(upload_to='images/', blank=True)
     content = models.TextField() 
-    password = models.CharField(max_length=20)
+    password = models.CharField(max_length=20, blank=True)
     found = models.BooleanField(default=False)
 
     def __str__(self):

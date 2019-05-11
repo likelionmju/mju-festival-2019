@@ -18,8 +18,7 @@ def new(request):
             lost.save()
         return redirect('lost_home')
     else:
-        form = LostForm()
-        return render(request, 'lost_new.html', {'form':form})
+        return render(request, 'lost_new.html')
 
 def detail(request, lost_id):
     stuff = get_object_or_404(Lost, pk=lost_id)
