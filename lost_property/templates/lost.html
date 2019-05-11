@@ -1,0 +1,13 @@
+<h1>Lost And Found</h1>
+<h2>내껀 내꺼 니꺼도 내꺼?</h2>
+
+{% for s in stuffs %}
+<div class="container">
+    <h1>{{ s.title }}</h1>
+    <p>{{ s.author }}</p>
+    <p>{{ s.pub_date }}</p>
+    <p>{{ s.summary }}</p>
+    <p>{{ s.found }}</p>
+</div>
+<br>
+{% endfor %}
