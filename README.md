@@ -69,11 +69,13 @@ pip install django
 pip install Pillow
 ```
 
-다운로드 후, migrate와 runserver를 한 번씩 실행합니다.
+다운로드 후, 직군에 맞는 브랜치로 checkout합니다.
+
+-	Front-end: feature-front
+-	Back-end: feature-back
 
 ```
-python manage.py migrate
-python manage.py runserver
+git checkout 브랜치명
 ```
 
 ### 3. Django에서 자주 사용되는 명령어
