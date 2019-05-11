@@ -1,13 +1,32 @@
-<h1>Lost And Found</h1>
-<h2>내껀 내꺼 니꺼도 내꺼?</h2>
-
-{% for stuff in stuffs %}
-<div class="container">
-    <p><a href="{% url 'lost_detail' stuff.id %}"><h1>{{ stuff.title }}</h1></a></p>
-    <p>{{ stuff.author }}</p>
-    <p>{{ stuff.pub_date }}</p>
-    <p>{{ stuff.summary }}</p>
-    <p>{{ stuff.found }}</p>
-</div>
-<br>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>분실물</title>
+</head>
+<body>
+        <h1>Lost And Found</h1>
+        <h2><em>내껀 내꺼 니꺼도 내꺼?</em></h2>
+        <nav>
+            <a href="#">글쓰기</a>
+        </nav>
+        
+        {% for stuff in stuffs %}
+        <div class="container">
+            <p><a href="{% url 'lost_detail' stuff.id %}"><h1>{{ stuff.title }}</h1></a></p>
+            <p>{{ stuff.author }}</p>
+            <p>{{ stuff.pub_date }}</p>
+            <p>{{ stuff.summary }}</p>
+            <p>{% if stuff.found == False %}
+                    아직 찾는중입니다
+                    {% else %}
+                    찾음
+                    {% endif %}</p>
+        </div>
+        <br>
+        {% endfor %}
+        
+</body>
+</html>

@@ -4,6 +4,10 @@
 <p><h1>{{ stuffs.title }}</h1></p>
 <p>{{ stuffs.author }}</p>
 <p>{{ stuffs.pub_date }}</p>
-<img class="" src="{{ stuffs.image.url }}" alt=" Card image cap" width="300">
+<img class="" src="{{ stuffs.image.url }}" alt="image" width="300">
 <p>{{ stuffs.content }}</p>
-<p>{{ stuffs.found }}</p>
+<p>{% if stuffs.found == False %}
+        아직 찾는중입니다
+        {% else %}
+        찾음
+        {% endif %}</p>
