@@ -7,12 +7,12 @@ class Board(models.Model):
     title = models.ForeignKey(Board, on_delete=models.CASCADE, related_name='comments')
     content = models.TextField()
     pub_date = models.DateTimeField('publish')
-    author = models.CharField(max_length=20)
+    author = models.CharField(max_length=20, blank=True)
     password = models.CharField(max_length=20)
 
 class Lost(models.Model):
     title = models.ForeignKey(Lost, on_delete=models.CASCADE, related_name='comments')
     content = models.TextField()
     pub_date = models.DateTimeField('publish')
-    author = models.CharField(max_length=20)
+    author = models.CharField(max_length=20, blank=True)
     password = models.CharField(max_length=20)
