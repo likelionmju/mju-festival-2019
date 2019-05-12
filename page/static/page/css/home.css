@@ -1,6 +1,58 @@
-body {
-    text-align:center;
-}
-h1{
-    font-style: italic
-}
+.App {
+    font-family: 'Do Hyeon', sans-serif;
+    /* background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%); */
+    /* background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%); */
+    /* background-image: linear-gradient(to top, #50cc7f 0%, #f5d100 100%); */
+    background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+  }
+  .card-body img{
+    size: 50px;
+  }
+  
+  .card-title{
+    text-align: center;
+  }
+  
+  .title{
+    color: white;
+  }
+  
+  .footer-distributed{
+    background-color: white;
+    text-align: left;
+    font: 10px sans-serif;
+    color : black;
+    height: auto;
+    padding: 50px 35px;
+  }
+  .likelionlogo{
+    float:left;
+    width:101px !important;
+    height: 100px !important;
+    padding-right: 10px !important;
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .col-lg-6{
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  /* .col-sm-12{
+    flex:0 0 100%;
+    max-width: 100%;
+  } */
+  .col-lg-6{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  *, ::after, ::before{
+    box-sizing: border-box;
+  }
