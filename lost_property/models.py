@@ -4,11 +4,10 @@ from django.conf import settings
 # Create your models here.
 class Lost(models.Model):
     title = models.CharField(max_length=50) 
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, default=1)
     pub_date = models.DateTimeField('publish')
     image = models.ImageField(upload_to='images/', blank=True)
-    content = models.TextField() 
-    password = models.CharField(max_length=20, blank=True)
+    content = models.TextField()
     found = models.BooleanField(default=False)
 
     def __str__(self):

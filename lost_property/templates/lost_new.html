@@ -13,9 +13,6 @@
             <br>
             <textarea class="form-control" name="content" rows="10" placeholder="내용을 입력해주세요"></textarea>
             <br>
-            {% if not user.is_authenticated %}
-            <input type="password" name="password">
-            {% endif %}
         </table>
         <br>
         <input class="btn btn-dark" type="submit" value="제출하기">

@@ -11,15 +11,11 @@ def new(request):
     if request.method == 'POST':
         lost = Lost()
         lost.title = request.POST['title']
-        if request.user:
+        if request.user.is_authenticated:
             lost.author = request.user
-        lost.content = request.POST['content']
         # image 파일이 있으면 post 객체에 저장
         if 'image' in request.FILES:
             lost.image = request.FILES['image']
-        # 작성자가 회원이 아니면 비밀번호 저장 
-        if 'password' in request.POST:
-            lost.password = request.POST['password']
         lost.pub_date = timezone.datetime.now()
         lost.save()
         return redirect('lost_home')

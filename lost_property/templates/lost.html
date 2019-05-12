@@ -8,8 +8,14 @@
         </a>
         
         {% for stuff in stuffs %}
-            <p><a href="{% url 'lost_detail' stuff.id %}"><h1>{{ stuff.title }}</h1></a></p>
+            <a href="{% url 'lost_detail' stuff.id %}"><h1>{{ stuff.title }}</h1></a>
+            
+            {% if stuff.author.is_superuser %}
+            <p>익명</p>
+            {% else %}
             <p>{{ stuff.author }}</p>
+            {% endif %}
+            
             <p>{{ stuff.pub_date }}</p>
             <p>{{ stuff.summary }}</p>
             <p>{% if stuff.found == False %}
