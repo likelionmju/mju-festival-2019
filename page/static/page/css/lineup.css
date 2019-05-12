@@ -11,7 +11,6 @@
 
 .mjText {
     color: white;
-    font-family: 'Anton', sans-serif;
     font-size: 70px;
     opacity: 0.9;
 }
@@ -25,14 +24,13 @@
 .title {
     text-align: center;
     padding: 50px;
-    font-family: 'Jua', sans-serif;
     font-size: 50px;
     margin-bottom: 0px;
+    font-family: 'Do Hyeon', sans-serif;
 }
 
 .date {
     text-align: center;
-    font-family: 'Jua', sans-serif;
     font-size: 30px;
     padding: 5px;
 }
@@ -57,7 +55,6 @@
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    font-family: 'Jua', sans-serif;
     font-size: 30px;
     color: white;
 }
@@ -66,4 +63,6 @@
     text-align: center;
 }
 
-
+* {
+    font-family: 'Do Hyeon', sans-serif;
+}
