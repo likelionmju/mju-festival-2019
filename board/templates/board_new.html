@@ -7,10 +7,21 @@
   
   <h2>새글을 써요</h2>
 
-  <form method='POST'>
+  <form method='POST' enctype="multipart/form-data">
       {% csrf_token %}
       <table>
-        {{form.as_table}}
+          <select name="purpose" class="form-control">
+              <option>속보</option>
+              <option>택시</option>
+              <option>합석</option>
+              <option>기타</option>
+            </select>
+          <input type="text" name="title">
+          <br>
+          <input type="file" name="image">
+          <br>
+          <textarea class="form-control" name="content" rows="10" placeholder="내용을 입력해주세요"></textarea>
+          <br>
       </table>
       <br>
       <input class="btn btn-dark" type="submit" value="제출하기">

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class='container'>
+
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <select name="purpose" class="form-control">
+                <option>속보</option>
+                <option>택시</option>
+                <option>합석</option>
+                <option>기타</option>
+            </select>
+            <input type="file" name="image" class="form-control">
+            <br>
+            <textarea class="form-control" name="content" rows="10" placeholder="내용을 입력해주세요">{{board.content}}</textarea>
+            <br>
+        </table>
+        <br>
+        <input class="btn btn-dark" type="submit" value="제출하기">
+    </form>
+
+    <a href="{% url 'board_home' %}"> 홈으로 </a>
+
+</div>
+
+{% endblock %}
