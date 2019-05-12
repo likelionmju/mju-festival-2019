@@ -15,3 +15,9 @@ def lineup(request):
 
 def bus(request):
     return render(request, "bus.html")
+
+def individual(request):
+    return render(request, "individual.html")
+
+def organization(request):
+    return render(request, "organization.html")
