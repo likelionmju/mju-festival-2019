@@ -27,75 +27,75 @@
 
 
 
+  <div class="App">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">Myongji Festa</a>
+      <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarCollapse"
+        data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="./">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./info/lineup">라인업</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./info/foodtruck">푸드트럭</a>
+          </li>
 
+          <a class="nav-link" href="./info/booth">부스안내</a>
+          <a class="nav-link" href="./info/bus">버스막차정보</a>
+          <a class="nav-link" href="#">분실물</a>
+          <a class="nav-link" href="#">자유게시판</a>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="text" />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <section class="main_img">
+      <br>
+      <br>
+      <img src="{% static 'page/images/main.jpg' %}" alt="main 화면" style="max-width: 100%; height: auto;">
+    </section>
+    <section class="line-up">
+      <br>
+      <br>
+      <h1 class="title" style="text-align:center; font-size: 3em">MYONGJI-FESTA <br> LINEUP</h1>
+      <br>
+      <p class="subtit" style="text-align:center">어느때보다 화려한 라인업으로 축제를 즐겨보세요!</p>
 
-<div class="App">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="./home.html">Myongji Festa</a>
-    <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarCollapse"
-      data-toggle="collapse" type="button">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="./home.html">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./lineup.html">라인업</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./foodtruck.html">푸드트럭</a>
-        </li>
-
-        <a class="nav-link" href="./booth.html">부스안내</a>
-        <a class="nav-link" href="./bus.html">버스막차정보</a>
-        <a class="nav-link" href="#">분실물</a>
-        <a class="nav-link" href="#">자유게시판</a>
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">
-        <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="text" />
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-  <section class="main_img">
-    <br>
-    <br>
-    <img src="{% static 'page/images/main.png' %}" alt="main 화면" style="max-width: 100%; height: auto;">
-  </section>
-  <section class="line-up">
-    <br>
-    <br>
-    <h1 class="title" style="text-align:center">FESTA-LINEUP</h1>
-    <div class="container">
       <div class="carousel slide" data-ride="carousel" id="myCarousel">
         <ol class="carousel-indicators">
           <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
           <li data-slide-to="1" data-target="#myCarousel"></li>
           <li data-slide-to="2" data-target="#myCarousel"></li>
         </ol>
-        <div class="carousel-inner" item-align: "center">
+        <div class="carousel-inner">
           <div class="carousel-item active">
 
-            <img src="{% static 'page/images/ikon.jpg' %}" width="50%" height="600px">
+            <img src="{% static 'page/images/lineup/yoonha.jpg' %}" style="max-width: 100%; height: auto;">
 
-            <img src="{% static 'page/images/ikon.jpg' %}" width="49%" height="600px">
+            <img src="{% static 'page/images/lineup/simon.jpg' %}" style="max-width: 100%; height: auto;">
           </div>
           <div class="carousel-item">
 
-            <img src="{% static 'page/images/ikon.jpg' %}" width="50%" height="600px">
+            <img src="{% static 'page/images/lineup/monki.jpg' %}" style="max-width: 100%; height: auto;">
 
-            <img src="{% static 'page/images/ikon.jpg' %}" width="49%" height="600px">
+            <img src="{% static 'page/images/lineup/icon.jpg' %}" style="max-width: 100%; height: auto;">
 
           </div>
           <div class="carousel-item">
 
-            <img src="{% static 'page/images/ikon.jpg' %}" width="50%" height="600px">
+            <img src="{% static 'page/images/lineup/hong.jpg' %}" style="max-width: 100%; height: auto;">
 
-            <img src="{% static 'page/images/ikon.jpg' %}" width="49%" height="600px">
+            <img src="{% static 'page/images/lineup/gil.jpg' %}" style="max-width: 100%; height: auto;">
           </div>
         </div>
         <a class="carousel-control-prev" data-slide="prev" href="#myCarousel" role="button">
@@ -107,107 +107,106 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    </div>
-  </section>
-  <section class="map">
-    <br>
-    <br>
-    <h1 class="title" style="text-align:center">부스/푸드트럭안내</h1>
-    <br>
-    <br>
-    <div class="container">
+    </section>
+    <section class="map">
+      <br>
+      <br>
+      <h1 class="title" style="text-align:center; font-size: 3em">부스/푸드트럭안내</h1>
+      <p class="subtit" style="text-align:center">다양한 이벤트와 먹거리로 축제를 더욱 풍성하게 즐기세요!</p>
+      <br>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h3 style="text-align:center">
+              <i class="fas fa-home"></i> 부스안내
+              <i class="fas fa-home"></i>
+            </h3>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">부스위치</h5>
+                <img src="{% static 'page/images/booth.jpg' %}" class="card-img-top">
+                <br>
+                <br>
+                <p class="card-text">학생자치기구 및 개인사업자가 준비한 부스를 체험해보세요!</p>
+                <a href="/info/booth" class="btn btn-primary">부스보러가기</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 box wow bounceInUp" data-wow-duration="1.4s" style="visibility: visible; animation-duration: 1.4s; animation-name: bounceInUp;">
+            <h3 style="text-align:center">
+              <i class="fas fa-truck"></i> 푸드트럭안내
+              <i class="fas fa-truck"></i>
+            </h3>
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">푸드트럭 위치</h5>
+                <img src="{% static 'page/images/foodtruck.jpeg' %}" class="card-img-top">
+                <br>
+                <br>
+                <p>더 다양한 음식을 즐기고 싶다면? 지금바로 푸드트럭으로 gogo!!</p>
+                <a href="/info/foodtruck" class="btn btn-primary">푸드트럭보러가기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </container>
+    </section>
+
+    <section class="storeinfo">
+      <br>
+      <br>
+      <h1 class="title" style="text-align:center">일일호프안내</h1>
+    </section>
+
+    <section class="businfo">
+      <br>
+      <br>
+      <h1 class="title" style="text-align:center; font-size: 3em">버스막차정보</h1>
+    </section>
+    <!-- footer -->
+    <footer class="footer-distributed" style="font-size: 1em; margin-top : 0px">
       <div class="row">
-        <div class="col-sm-6">
-          <h3 style="text-align:center">
-            <i class="fas fa-home"></i> 부스안내
-            <i class="fas fa-home"></i>
-          </h3>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">부스위치</h5>
-              <img src="{% static 'page/images/booth.jpg' %}" class="card-img-top">
+
+        <p>
+        </p>
+        <div class="col-lg-6">
+          <div style="margin-right: 30px;">
+            <img class="likelionlogo" src="{% static 'page/images/mju_seoul.jpg' %}" alt="likelionlogo">
+          </div>
+
+          <div style="margin-left: 30px; font-size:15px;">
+            03674 서울특별시 서대문구 거북골로 34 명지대학교
+            <br> Email : mjuseoul.likelion.org
+            <a>
+              <br> COPYRIGHT© 2019 Myongji_LIKELION.
+              <br> ALL RIGHTS RESERVED.
               <br>
-              <br>
-              <p class="card-text">학생자치기구 및 개인사업자가 준비한 부스를 체험해보세요!</p>
-              <a href="#" class="btn btn-primary">부스보러가기</a>
-            </div>
+            </a>
           </div>
         </div>
-        <div class="col-sm-6 box wow bounceInUp" data-wow-duration="1.4s" style="visibility: visible; animation-duration: 1.4s; animation-name: bounceInUp;">
-          <h3 style="text-align:center">
-            <i class="fas fa-truck"></i> 푸드트럭안내
-            <i class="fas fa-truck"></i>
-          </h3>
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">푸드트럭 위치</h5>
-              <img src="{% static 'page/images/foodtruck.jpeg' %}" class="card-img-top">
-              <br>
-              <br>
-              <p>더 다양한 음식을 즐기고 싶다면? 지금바로 푸드트럭으로 gogo!!</p>
-              <a href="#" class="btn btn-primary">푸드트럭보러가기</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      </container>
-  </section>
-
-  <section class="storeinfo">
-    <br>
-    <br>
-    <h1 class="title" style="text-align:center">일일호프안내</h1>
-  </section>
-
-  <section class="businfo">
-    <br>
-    <br>
-    <h1 class="title" style="text-align:center">버스막차정보</h1>
-  </section>
-  <!-- footer -->
-  <footer class="footer-distributed" style="font-size: 1em; margin-top : 0px">
-    <div class="row">
-
-      <p>
-      </p>
-      <div class="col-lg-6">
-        <div style="margin-right: 30px;">
-          <img class="likelionlogo" src="{% static 'page/images/mju_seoul.jpg' %}" alt="likelionlogo">
-        </div>
-
-        <div style="margin-left: 30px; font-size:20px;">
-          03674 서울특별시 서대문구 거북골로 34 명지대학교
-          <br> Email : mjuseoul.likelion.org
-          <a>
-            <br> COPYRIGHT© 2019 Myongji_LIKELION.
-            <br> ALL RIGHTS RESERVED.
-            <br>
+        <div class="footer-right col-lg-6" style="text-align:right;">
+          <strong style="font-size:20px; margin-right: 25px;">CONTACT</strong>
+          <br>
+          <br>
+          <a href="https://www.facebook.com/likelionMJU/">
+            <img class="fb_icon" src="{% static 'page/images/face.png' %}" alt="Fb icon " width="50px" height="50px">
           </a>
+          <a href="http://mjuseoul.likelion.org/">
+            <img class="fb_icon" src="{% static 'page/images/mju_seoul.jpg' %}" alt="mju icon" width="45px" height="45px">
+          </a>
+          <a href="https://likelion.net/">
+            <img class="lion_icon" src="{% static 'page/images/likelion.png' %}" alt="Likelion" width="40px" height="40px">
+          </a>
+
         </div>
       </div>
-      <div class="footer-right col-lg-6" style="text-align:right;">
-        <strong style="font-size:20px; margin-right: 25px;">CONTACT</strong>
-        <br>
-        <br>
-        <a href="https://www.facebook.com/likelionMJU/">
-          <img class="fb_icon" src="{% static 'page/images/face.png' %}" alt="Fb icon ">
-        </a>
-        <a href="http://mjuseoul.likelion.org/">
-          <img class="fb_icon" src="{% static 'page/images/mju_seoul.jpg' %}" alt="mju icon">
-        </a>
-        <a href="https://likelion.net/">
-          <img class="lion_icon" src="{% static 'page/images/likelion.png' %}" alt="Likelion">
-        </a>
-
-      </div>
-
-      <p></p>
+    </footer>
     </div>
-  </footer>
-</div>
 
 
 
 
-  {% endblock %}
+
+{% endblock %}
