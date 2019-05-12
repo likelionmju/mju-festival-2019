@@ -17,7 +17,8 @@ def lost_new(request, stuff_id):
         comment = LostComment()
         comment.content = request.POST['comment']
         comment.title = lost
-        comment.author = request.user
+        if request.user.is_authenticated:
+            comment.author = request.user
         comment.pub_date = timezone.now()
         comment.save()
     return redirect('lost_detail', stuff_id)
