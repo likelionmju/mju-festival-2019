@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Lost
-from .forms import LostForm
 
 # Create your views here.
 def home(request):
@@ -10,12 +9,19 @@ def home(request):
 
 def new(request):
     if request.method == 'POST':
-        form = LostForm(request.POST)
-        if form.is_valid():
-            lost = form.save(commit=False)
+        lost = Lost()
+        lost.title = request.POST['title']
+        if request.user:
             lost.author = request.user
-            lost.pub_date = timezone.now()
-            lost.save()
+        lost.content = request.POST['content']
+        # image 파일이 있으면 post 객체에 저장
+        if 'image' in request.FILES:
+            lost.image = request.FILES['image']
+        # 작성자가 회원이 아니면 비밀번호 저장 
+        if 'password' in request.POST:
+            lost.password = request.POST['password']
+        lost.pub_date = timezone.datetime.now()
+        lost.save()
         return redirect('lost_home')
     else:
         return render(request, 'lost_new.html')
@@ -35,10 +41,10 @@ def delete(request, stuff_id):
 def edit(request, stuff_id):
     stuff = get_object_or_404(Lost, pk=stuff_id)
     if request.method == 'POST':
-        stuff.content = request.POST['content']
         # image 파일이 있으면 post 객체에 저장
         if 'image' in request.FILES:
             stuff.image = request.FILES['image']
+        stuff.content = request.POST['content']
         stuff.save()
         return redirect('/lost/detail/'+str(stuff.id))
     else:
