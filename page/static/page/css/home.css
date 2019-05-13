@@ -76,3 +76,9 @@ footer.footer .social-link {
 footer.footer .social-link:hover {
   text-decoration: none;
 }
+
+@media only screen and (max-width: 1024px){
+  .guest {
+    width: 49% !important;
+  }
+}
