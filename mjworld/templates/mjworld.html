@@ -10,12 +10,12 @@
     <h5 class="card-title">{{ mjworld.title }}</h5>
     <p class="card-text">{{ mjworld.content }}</p>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail">더 알아보기</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail{{mjworld.id}}">더 알아보기</button>
   </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="detaillLabel" aria-hidden="true">
+<div class="modal fade" id="detail{{mjworld.id}}" tabindex="-1" role="dialog" aria-labelledby="detaillLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
