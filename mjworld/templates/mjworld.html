@@ -25,14 +25,15 @@
         </button>
       </div>
       <div class="modal-body">
-        주소 : {{ mjworld.address }}
-        <br>
-        종류 : {{ mjworld.kind }}
-        <br>
         전화번호 : {{ mjworld.tel }}
+        <br>
+        영업시간 : {{ mjworld.time }}
+        <br>
+        대표메뉴 : {{ mjworld.menu }}
         <br>
         가격대 : {{ mjworld.price }}
         <br>
+        포장유무 : {{ mjworld.takeout }}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -40,6 +41,8 @@
     </div>
   </div>
 </div>
+
+
 
 {% endfor %}
 
