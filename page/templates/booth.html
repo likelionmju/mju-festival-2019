@@ -3,9 +3,15 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'page/css/booth.css' %}" type="text/css">
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(e){
+        $('img[usemap]').rwdImageMaps();
+    })
+</script>
 <!-- 아래부터 작성하세요 -->
-<img src="{% static 'page/images/booth.jpg'%}" alt="부스배치도" usemap="#booth">
+<img src="{% static 'page/images/booth.jpg'%}" alt="부스배치도" usemap="#booth" style="width:100%">
 <map name="booth">
 
     <area alt="" title="" href="{% url 'organization' %}" shape="rect" coords="149,39,766,128" style="outline:none;"
@@ -42,4 +48,5 @@
         target="_self" />
 
 </map>
+
 {% endblock %}
