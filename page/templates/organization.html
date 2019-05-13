@@ -7,32 +7,38 @@
 <!-- 아래부터 작성하세요 -->
 <div class="container">
     <div class="row">
-        {% for booth in booths %}
-        <div class="card mb-3" id="1">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{{booth.image.url}}" class="card-img" alt="..." style="max-width: 100%; height: auto;">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h3 class="card-title">{{booth.title}}</h3>
-                        <h5>{{booth.description}}</h5>
-                        <h6>운영 시간 : {{booth.time}}</h6>
-                        <h6 class="subtitle">{{booth.subtitle1}}</h6>
-                        {{booth.content1|linebreaks}}
-                        {% if booth.subtitle2 %}
-                        <h6 class="subtitle">{{booth.subtitle2}}</h6>
-                        {{booth.content2|linebreaks}}
-                        {% endif %}
-                        <h6>위치 : {{booth.location}}</h6>
-                        {% if booth.hyperlink %}
-                        <h6>더 자세한 정보를 얻고 싶다면? <a href="{{booth.hyperlink}}">CLICK ME!</a></h6>
-                        {% endif %}
+            {% for booth in booths %}
+            <div class="card mb-3" id="1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{booth.image.url}}" class="card-img" alt="..." style="max-width: 100%; height: auto;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">{{booth.title}}</h3>
+                            <h5>{{booth.description}}</h5>
+                            {% if booth.time %}
+                            <h6>운영 시간 : {{booth.time}}</h6>
+                            {% endif %}
+                            {% if booth.subtitle1 %}
+                            <h6 class="subtitle">{{booth.subtitle1}}</h6>
+                            {{booth.content1|linebreaks}}
+                            {% endif %}
+                            {% if booth.subtitle2 %}
+                            <h6 class="subtitle">{{booth.subtitle2}}</h6>
+                            {{booth.content2|linebreaks}}
+                            {% endif %}
+                            {% if booth.location%}
+                            <h6>위치 : {{booth.location}}</h6>
+                            {% endif %}
+                            {% if booth.hyperlink %}
+                            <h6>더 자세한 정보를 얻고 싶다면? <a href="{{booth.hyperlink}}">CLICK ME!</a></h6>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {% endfor %}
+            {% endfor %}
     </div>
 </div>
 {% endblock %}
