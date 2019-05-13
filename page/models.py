@@ -10,3 +10,33 @@ class Food(models.Model):
     
     def __str__(self):
         return self.title
+
+class Organization(models.Model):
+    image = models.ImageField(blank=True)
+    title = models.CharField(max_length=40)
+    description = models.TextField()
+    time = models.CharField(max_length=40, blank=True)
+    subtitle1 = models.CharField(max_length=40, blank=True)
+    content1 = models.TextField(blank=True)
+    subtitle2 = models.CharField(max_length=40, blank=True)
+    content2 = models.TextField(blank=True)
+    location = models.CharField(max_length=40, blank=True)
+    hyperlink = models.CharField(max_length=40, blank=True)
+
+    def __str__(self):
+        return self.title
+
+class Individual(models.Model):
+    image = models.ImageField(blank=True)
+    title = models.CharField(max_length=40)
+    description = models.TextField()
+    time = models.CharField(max_length=40, blank=True)
+    subtitle1 = models.CharField(max_length=40, blank=True)
+    content1 = models.TextField(blank=True)
+    subtitle2 = models.CharField(max_length=40, blank=True)
+    content2 = models.TextField(blank=True)
+    location = models.CharField(max_length=40, blank=True)
+    hyperlink = models.CharField(max_length=40, blank=True)
+
+    def __str__(self):
+        return self.title
