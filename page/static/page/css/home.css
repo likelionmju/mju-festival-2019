@@ -56,3 +56,7 @@
   .carousel-inner {
       text-align: center;
   }
+
+  img {
+    display: block; margin: 0px auto; 
+  }
