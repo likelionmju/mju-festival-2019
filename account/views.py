@@ -12,6 +12,8 @@ def register(request):
             )
             auth.login(request, user)
             return redirect('home')
+        else:
+            return HttpResponse('입력 정보를 확인하세요.')
     else:
         return render(request, 'register.html')
 

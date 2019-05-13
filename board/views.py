@@ -19,6 +19,7 @@ def new(request):
         if 'image' in request.FILES:
             board.image = request.FILES['image']
         board.pub_date = timezone.datetime.now()
+        board.content = request.POST['content']
         board.save()
         return redirect('board_home')
     else:
