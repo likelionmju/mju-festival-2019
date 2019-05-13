@@ -3,19 +3,22 @@
 
 {% block content%}
 
-<div class="container">
-  <p><h3>제목: {{ board_detail.title }}</h3></p>
-  <p>작성자: {{ board_detail.author }}</p>
-  <p>일시: {{ board_detail.pub_date }}</p>
-  <p>목적: {{ board_detail.purpose }}</p>
-  {% if board_detail.image %}
-    <img src="{{ board_detail.image.url }}" alt = "image" width="300">
-    
-  {% endif %}
-  <!-- 작성한 글을 그대로 받아오기 위한 pre tag -->
-  <p><pre>{{ board_detail.content }}</pre></p>
 
-  <a href = "{% url 'board_home' %}">Back</a>
+<div class="container col-md-8">
+  <div class="card">
+    <div class="card-body">
+
+      <p><h3>제목: {{ board_detail.title }}</h3></p>
+      <p>작성자: {{ board_detail.author }}</p>
+      <p>{{ board_detail.pub_date }}</p>
+      {% if board_detail.image %}
+        <img class="" src="{{ board_detail.image.url }}" alt="image" width="80%">
+      {% endif %}
+      <p><pre>{{ board_detail.content }}</pre></p>
+
+    </div>
+  </div>
 </div>
+
 
 {% endblock %}
