@@ -2,7 +2,10 @@
 {% load static %}
 
 {% block content %}
+<!— CSS Styles —>
+<link rel="stylesheet" href="{% static '/page/css/style.css' %}">
 <link rel="stylesheet" href="{% static 'page/css/home.css' %}" type="text/css">
+
 <div class="App">
   <section class="main_img">
     <img src="{% static 'page/images/main.jpg' %}" alt="main 화면" style="max-width: 100%; height: auto;">
@@ -77,7 +80,7 @@
           </div>
         </div>
         <div class="col-sm-6 box wow bounceInUp" data-wow-duration="1.4s" style="visibility: visible; animation-duration: 1.4s; animation-name: bounceInUp;">
-          <h3 style="text-align:center">
+          <h3 style="text-align:center; margin-top: 20px;">
             <i class="fas fa-truck"></i> 푸드트럭안내
             <i class="fas fa-truck"></i>
           </h3>
@@ -97,73 +100,77 @@
 
 
   <section class="storeinfo">
-      <br>
-      <br>
+    <br>
+    <br>
+    <div class="col-md-7 center-align">
       <h1 class="title" style="text-align:center; font-size: 3em">분실물센터</h1>
-      <a href="/lost"> <img src="{% static 'page/images/lost.png' %}" alt="" width = 100%;> </a>
+      <a href="/lost"> <img src="{% static 'page/images/lost.png' %}" alt="" width=100%;> </a>
     </div>
-    </div>
-  </section>
+</section>
 
 
-  <section class="storeinfo">
-    <br>
-    <br>
+<section class="storeinfo">
+  <br>
+  <br>
+  <div class="col-md-7 center-align">
     <h1 class="title" style="text-align:center; font-size: 3em">자유게시판</h1>
-    <a href="/board"> <img src="{% static 'page/images/freeboard.png' %}" alt="" width = 100%;> </a>
-  </section>
+    <a href="/board"> <img src="{% static 'page/images/freeboard.png' %}" alt="" width=100%;> </a>
+  </div>
+</section>
 
 
-  <section class="storeinfo">
-    <br>
-    <br>
+<section class="storeinfo">
+  <br>
+  <br>
+  <div class="col-md-7 center-align">
     <h1 class="title" style="text-align:center; font-size: 3em">심야식당</h1>
-    <a href="/mjworld"> <img src="{% static 'page/images/night.png' %}" alt="" width = 100%;> </a>
-  </section>
+    <a href="/mjworld"> <img src="{% static 'page/images/night.png' %}" alt="" width=100%;> </a>
+  </div>
+</section>
 
 
-  <section class="businfo">
-    <br>
-    <br>
-    <h1 class="title" style="text-align:center; font-size: 3em">버스막차정보</h1>
-    <p class="subtit" style="text-align:center">여러분의 새벽할증은 지켜드릴게요!</p>
-    <div style="text-align:center; margin-bottom: 30px;">
-      <img src="{% static 'page/images/left.jpg' %}" alt="버스정보" style="max-width: 100%; height: auto;">
-      <img src="{% static 'page/images/right.jpg' %}" alt="버스정보" style="max-width: 100%; height: auto;">
-    </div>
-  </section>
-  <!-- Footer -->
-  <footer class="footer footer-distributed text-center">
-    <div class="container">
-      <h3 class="text-muted mb-3">Contact us</h3>
-      <ul class="list-inline mb-4">
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/likelionMJU/">
-            <img class="fb_icon" src="{% static 'page/images/face.png' %}" alt="Fb icon " width="50px" height="50px">
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="http://mjuseoul.likelion.org/">
-            <img class="mjulikelion_icon" src="{% static 'page/images/mju_seoul.jpg' %}" alt="mju icon" width="45px" height="45px">
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white" href="https://likelion.net/">
-            <img class="lion_icon rounded-circle" src="{% static 'page/images/likelion.png' %}" alt="Likelion" width="41px" height="41px">
-          </a>
-        </li>
-      </ul>
-      <p class="text-muted small mb-0">
-        Address  :  03674 서울특별시 서대문구 거북골로 34 명지대학교
-        <br> Email  :  mjuseoul.likelion.org
-        <a>
-          <br> COPYRIGHT© 2019 Myongji_LIKELION.
-          <br> ALL RIGHTS RESERVED.
-          <br>
+<section class="businfo">
+  <br>
+  <br>
+  <h1 class="title" style="text-align:center; font-size: 3em">버스막차정보</h1>
+  <p class="subtit" style="text-align:center">여러분의 새벽할증은 지켜드릴게요!</p>
+  <div style="text-align:center">
+    <img src="{% static 'page/images/left.jpg' %}" alt="버스정보" style="max-width: 100%; height: auto;">
+    <img src="{% static 'page/images/right.jpg' %}" alt="버스정보" style="max-width: 100%; height:842px;">
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer footer-distributed text-center">
+  <div class="container">
+    <h3 class="text-muted mb-3">Contact us</h3>
+    <ul class="list-inline mb-4">
+      <li class="list-inline-item">
+        <a class="social-link rounded-circle text-white mr-3" href="https://www.facebook.com/likelionMJU/">
+          <img class="fb_icon" src="{% static 'page/images/face.png' %}" alt="Fb icon " width="50px" height="50px">
         </a>
-      </p>
-    </div>
-  </footer>
+      </li>
+      <li class="list-inline-item">
+        <a class="social-link rounded-circle text-white mr-3" href="http://mjuseoul.likelion.org/">
+          <img class="mjulikelion_icon" src="{% static 'page/images/mju_seoul.jpg' %}" alt="mju icon" width="45px" height="45px">
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="social-link rounded-circle text-white" href="https://likelion.net/">
+          <img class="lion_icon rounded-circle" src="{% static 'page/images/likelion.png' %}" alt="Likelion" width="41px" height="41px">
+        </a>
+      </li>
+    </ul>
+    <p class="text-muted small mb-0">
+      Address : 03674 서울특별시 서대문구 거북골로 34 명지대학교
+      <a>
+        <br> COPYRIGHT© 2019 Myongji_LIKELION.
+        <br> ALL RIGHTS RESERVED.
+        <br>
+      </a>
+    </p>
+  </div>
+</footer>
 </div>
 
 {% endblock %}
