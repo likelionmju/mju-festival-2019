@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Food
+from .models import Food, Individual, Organization
 
 # Create your views here.
 def home(request):
@@ -19,7 +19,9 @@ def bus(request):
     return render(request, "bus.html")
 
 def individual(request):
-    return render(request, "individual.html")
+    booths = Individual.objects.all()
+    return render(request, "individual.html", {'booths':booths})
 
 def organization(request):
-    return render(request, "organization.html")
+    booths = Organization.objects.all()
+    return render(request, "organization.html", {'booths':booths})

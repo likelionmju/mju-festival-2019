@@ -4,173 +4,35 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'page/css/booth.css' %}" type="text/css">
 
-
 <!-- 아래부터 작성하세요 -->
-<img class="boothmain" src="{% static 'page/images/boothtop.jpg'%}" alt="" width="100%" max-height= "350px">
 <div class="container">
     <div class="row">
+        {% for booth in booths %}
         <div class="card mb-3" id="1">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img src="{% static 'page/images/flower.jpg'%}" class="card-img" alt="..." style="max-width: 100%; height: auto;" >
+                    <img src="{{booth.image.url}}" class="card-img" alt="..." style="max-width: 100%; height: auto;">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h3 class="card-title">플라워</h3>
-                        <h5>명지대학교 창업동아리 FLOW-ER에서 직접 디자인, 주문제작한 에코백과 텀블러를 판매합니다. 또한 '펫뜰'에서는 강아지 수제 애견간식을 판매합니다. </h5>
-                        <h6>운영 시간 : 오전 10시 ~ 오후 5시 (14일 ~ 16일)</h6>
-                        <h6 class="subtitle">에코백, 텀블러, 향수, 디퓨저 판매</h6>
-                        <p class="card-text">에코백, 텀블러 : 5,000원
-                            <br> 향수, 디퓨저 : 3,000원
-                        </p>
-                        <h6 class="subtitle">강아지 수제 애견간식 판매</h6>
-                        <p class="card-text">닭가슴살 저키 100g : 4,000원
-                            <br> 송아지 목뼈 150g : 5,000원
-                            <br> 캥거루 꼬리 껌 100g : 4,000원</p>
-
-                        <h6>위치 : 본관 뒤 1번 부스</h6>
-                        
+                        <h3 class="card-title">{{booth.title}}</h3>
+                        <h5>{{booth.description}}</h5>
+                        <h6>운영 시간 : {{booth.time}}</h6>
+                        <h6 class="subtitle">{{booth.subtitle1}}</h6>
+                        {{booth.content1|linebreaks}}
+                        {% if booth.subtitle2 %}
+                        <h6 class="subtitle">{{booth.subtitle2}}</h6>
+                        {{booth.content2|linebreaks}}
+                        {% endif %}
+                        <h6>위치 : {{booth.location}}</h6>
+                        {% if booth.hyperlink %}
+                        <h6>더 자세한 정보를 얻고 싶다면? <a href="{{booth.hyperlink}}">CLICK ME!</a></h6>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-3" style="min-width: 540px;" id="2">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{% static 'page/images/japanese.png'%}" class="card-img-top" alt="">
-                </div>
-                <div class="col-md-8">
-
-                    <div class="card-body">
-                        <h3 class="card-title">일어일문학과</h3>
-                        <h5>일어일문학과의 특색에 맞게 다양한 음식과 체험을 준비했습니다!</h5>
-                        <h6 class="subtitle">쯔리,유카타 체험, 당고&라무네 판매</h6>
-                        <p class="card-text">쯔리 : 한 판당 2,000원
-                            <br>유카타 체험 : 5,000원
-                            <br>당고 : 3,000원
-                            <br>라무네 : 2,500원
-                        </p>
-                        <h6>위치 : 본관 뒤 2번 부스</h6>
-                        <h6>더 자세한 정보를 얻고 싶다면? <a href="https://www.facebook.com/mjujp/posts/2258211027550298?__xts__[0]=68.ARCmWVHgqBFt-C9r46oNYDUfIGsf9k-beBYYd0U_pWKO3xW4oT6YT76q3QCq0iLEZ6iFwquSsn-1EZYbJkm5bCIGXLgaZNo2yC3qOEyEUm6vnDRqcG986S6aW4SUlYwJxKXkNMKh8oABpNEfcs0iIQyxEoaFraN7lZphfuu-OkE_0tpjpCGN9zuhSrfnGKQw2JoK_ghwnb9j_fVXCmeH-JPmrGY-4boZ7Jy11GAZSxDyJBBE8vdVDFsQDAI_WID_X3IkG31iWNmBsJvVjfRpK_eQQ0Qkn2OZVzx9n8OBE_RH7uVSm2F8DgndyZ6czX8FDKeN1UkvqhHbPKdHXjcbUeHLGA&__tn__=-R">CLICK ME!</a></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="min-width: 540px;" id="3">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{% static 'page/images/ICT.png'%}" class="card-img" alt="">
-                </div>
-                <div class="col-md-8">
-
-                    <div class="card-body">
-                        <h3 class="card-title">ICT융합대학 '아융이네 도장깨기'</h3>
-                        <h5>아융이와 함께하는 도장깨기!</h5>
-                        <h6>운영 시간 : 오전 11시 ~ 오후 5시 (14일 ~ 16일)</h6>
-                        <h6 class="subtitle">게임 운영</h6>
-                        <p class="card-text">도장판(2,000원) 구매시 4개 종목 도전 가능
-                            <br> 종목 : 물병 세우기 / 와이어퍼즐 풀기 / 소믈리에 / 숨은 그림 찾기
-                            <br> 실패 시 종목 당 500원에 재도전 가능
-                            <br> 경품 1등 : 백화점 상품권 15만원 / 2등 : 폴라로이드 카메라 / 3등 : BBQ 기프티콘
-                        </p>
-                        <h6>위치 : 본관 뒤 3번 부스</h6>
-                        <h6>더 자세한 정보를 얻고 싶다면? <a href="https://www.facebook.com/mjuict/photos/a.1131694976843613/2470868639592900/?type=3&theater">CLICK ME!</a></h6>
-                    
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="min-width: 540px;" id="4">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{% static 'page/images/saebit.jpg'%}" class="card-img" alt="">
-                </div>
-                <div class="col-md-8">
-
-                    <div class="card-body">
-                        <h3 class="card-title">새빛모리 '새빛토스트'</h3>
-                        <h5>새빛모리에서 올해 새롭게 선보이는 토스트 메뉴! 따끈한 토스트와 아이스티로 든든한 한끼를 보장합니다.</h5>
-                        <h6>운영 시간 : 오전 10시 30분 ~ 오후 5시 (14일 ~ 16일)</h6>
-                        <h6 class="subtitle">토스트 판매</h6>
-                        <p class="card-text">블루베리 크림치즈 토스트, 카야치즈토스트, 누텔라 바나나토스트
-                            <br>단품 가격 : 2,800원 아이스티세트 3,500원 아이스티 : 1,000원
-                        </p>
-                        <h6>위치 : 본관 뒤 4번 부스</h6>
-                        <h6>더 자세한 정보를 얻고 싶다면? <a href="https://www.facebook.com/mjutwinkleLUV/posts/2173810019373603?__xts__[0]=68.ARCPDdAdCEMfk7DvZY2UUad60oX8mCJBeduYKkunPVn0WCTNIX2X8ZA6JIq6bWBe1PKz7qDGk_wRotwsyjkSbgb8qRiSHJh-cCVToTM-t1jQ7jx-6cthJo8Ck9Hojo1elIjS2KAc5ymugGdTGX_jG29aInqt_lnvOdwwMYh7FE6Wm-j_K8w2npPINa4-cPLhgOmalnN8IOozmPYbjS3-cbwu5X_1sRGZSb3fSb1pj9xNX96qVpOF4fo6XEiIsZHqX35BG1r9jvPfvcdUVaDN5t8l_3PwV5zvSHTDHOOdetjhqvNHpfUP-7LjBB58iEZ0VANFocH5uy7m0w7cHmsGq0K51A&__tn__=-R">CLICK ME!</a></h6>
-                    
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="min-width: 540px;" id="5">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{% static 'page/images/administration.jpg'%}" class="card-img" alt="">
-                </div>
-                <div class="col-md-8">
-
-                    <div class="card-body">
-                        <h3 class="card-title">행정학과</h3>
-                        <h5> 행운의 동전 던지기 게임과, 핸드메이드 키링을 판매합니다! 치킨과 다양한 상품 놓치지 마세요!</h5>
-                        <h6 class="subtitle">게임 진행, 키링 판매</h6>
-
-                        <p class="card-text">행운의 동전 던지기 : 1회 500원
-                            <br>핸드메이드 키링 : 3,000원 ~ 5,000원
-                        </p>
-                        <p>
-                        <h6>위치 : 본관 뒤 5번 부스</h6>
-                        <h6>더 자세한 정보를 얻고 싶다면? <a href="https://www.facebook.com/permalink.php?story_fbid=1262309847277792&id=622196274622489&__xts__[0]=68.ARAU6z0NeTlOPPOH6SZt0nY9WY6p-yWO0J5awUWoYcf_Hv0Na_ntsXK_IQmXNnkcD4sWu1lCOrwUMetZ173a3GYwx8Cmb1Jp_X9j7mL5_-G0bhaIdZKCCehqg1S45-Y0kCTln-e0StAz6T_TNAd0kGddvKTPkmnHE_Is1hXmCLlrKQz6xZYr6wmr7NF3QFQqSRvqLeSu7ZbU-OJ1zg_4Tf0d4Jd5YHIbMS5iTKGwBaPGWWfKGiEXxtgAydzbjyEr__aBfSvQX5xgml02YtlYK1MuDKA1c5uEtc3XbxcEt1TSAyB7yBd1db13k3ydWcvKpTLNy2zGBqacV5ZjzqkDdRD3Qg&__tn__=-R">CLICK ME!</a></h6>
-                    
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="min-width: 540px;" id="6">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{% static 'page/images/gaon.jpg'%}" class="card-img" alt="">
-                </div>
-                <div class="col-md-8">
-
-                    <div class="card-body">
-                        <h3 class="card-title">청소년 지도학과 '복숭아는 몽청하다'</h3>
-                        <h5>상콤한 에이드와 아이스티, SNS 태그 이벤트도 놓지지 마세요!</h5>
-                        <h6>운영시간 : 오전 10시 ~ 오후 5시 (14일 ~ 16일)</h6>
-                        <h6>에이드 판매</h6>
-                        <p class="card-text"> 청포도 에이드, 자몽 에이드 : 3,000원
-                            <br> 복숭아 아이스티 : 2,000원
-                        </p>
-                        <h6>SNS 태그 이벤트</h6>
-                        <p class="card_text"> 부스 사진 or 음료사진과 함께, #명지청지 #본관뒷뜰부스 #복숭아는멍청하다 태그시 500원 할인!
-                            <br> 태그한 게시글은 추후 추첨을 통해 다양한 선물을 드립니다!
-                        </p>
-                        <h6>위치 : 본관 뒤 6번 부스</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="min-width: 540px;" id="7">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{% static 'page/images/honggi.jpg'%}" class="card-img" alt="">
-                </div>
-                <div class="col-md-8">
-
-                    <div class="card-body">
-                        <h3 class="card-title">홍보기자단 '홍단 청단'</h3>
-                        <h5>우리학교 청춘들이 뜨겁게 축제를 즐길 수 있도록 상큼하고 톡톡튀는 에이드와 달달한 마카롱을 준비했습니다!</h5>
-                        <h6>운영 시간 : 오전 10시 ~ 오후 5시 (14일 ~ 15일)</h6>
-                        <h6 class="subtitle">에이드 판매</h6>
-                        <p class="card-text">레몬에이드, 홍단에이드, 청단에이드 : 2,000원
-                            <br>
-                            마카롱 2개(명지대 유튜브 구독자에 한해) : 1,000원
-                            <br>음료 구매시 음료당 마카롱 한개 증정
-                        </p>
-                        <h6>위치 : 본관 뒤 7번 부스</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
