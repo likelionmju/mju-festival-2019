@@ -8,14 +8,71 @@
   <div class="card">
     <div class="card-body">
 
-      <p><h3>제목: {{ board_detail.title }}</h3></p>
-      <p>작성자: {{ board_detail.author }}</p>
+      <p>
+        <h3>제목: {{ board_detail.title }}</h3>
+      </p>
+      <p>작성자: {% if board_detail.author.is_superuser %}
+        익명
+        {% else %}
+        {{ board_detail.author }}
+        {% endif %}
+      </p>
       <p>{{ board_detail.pub_date }}</p>
       {% if board_detail.image %}
-        <img class="" src="{{ board_detail.image.url }}" alt="image" width="80%">
+      <img class="" src="{{ board_detail.image.url }}" alt="image" width="80%">
       {% endif %}
-      <p><pre>{{ board_detail.content }}</pre></p>
+      <p>
+        <pre>{{ board_detail.content }}</pre>
+      </p>
 
+      <!-- comment form -->
+      {% if not user.is_authenticated %}
+      <a href="{% url 'login' %}">
+        <label style="color:gray;">로그인해야 댓글 삭제가 가능합니다</label>
+      </a>
+      {% endif %}
+      <form method="POST" action="{% url 'comment_board_new' board_detail.id %}">
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="text" name="comment" id="comment" class="form-control" placeholder="댓글 달기...">
+          <span class="input-group-btn">
+            <input class="btn btn-outline-primary" type="submit" value="댓글 달기">
+          </span>
+        </div>
+      </form>
+      <br>
+
+      <!-- comment list -->
+      {% for comment in board_detail.comments.all %}
+      <label><strong>
+          {% if comment.author.is_superuser %}
+          익명
+          {% else %}
+          {{ comment.author }}
+          {% endif %}
+        </strong>
+        {{comment.content}}</label>
+
+      <!--본인 댓글만 삭제 가능-->
+      {% if user.is_authenticated and user.username == board_detail.author.username %}
+      <a class="btn-sm float-right" href="{% url 'comment_board_delete' board_detail.id comment.id %}">
+        삭제
+      </a>
+      {% endif %}
+      <br>
+
+      {% empty %}
+      <label style="color:gray;">아직 댓글이 없습니다</label>
+      {% endfor %}
+
+
+      <p class="text-center">
+        <!--본인 글인 경우에만 삭제/수정 가능-->
+        {% if user.is_authenticated and user.username == board_detail.author.username %}
+        <a class="btn btn-info" href="{% url 'board_edit' board_detail.id %}">수정</a>
+        <a class="btn btn-danger" href="{%url 'board_delete' board_detail.id %}">삭제</a>
+        {% endif %}
+      </p>
     </div>
   </div>
 </div>

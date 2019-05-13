@@ -20,7 +20,11 @@
         <tbody>
         <tr>
           <td class="text-justify"> [{{ b.purpose }}] <a href="{%url 'board_detail' b.id%}">{{b.title}}</a></td> 
-          <td class="text-center">{{ b.author }} </td>
+          <td class="text-center">{% if b.author.is_superuser %}
+              익명
+              {% else %}
+              {{ b.author }}
+              {% endif %} </td>
           <td class="text-center">{{ b.pub_date|date:"Y-m-d" }}</td>
         </tr>
         </tbody>
