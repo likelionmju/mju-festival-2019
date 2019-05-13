@@ -46,6 +46,8 @@ div.row{
 img{
     max-width:100%; max-height:100%;
     width:auto; height:auto;
+    display: block; 
+    margin: 0px auto; 
 }
 @media (min-width: 768px) {
     .card-img {
