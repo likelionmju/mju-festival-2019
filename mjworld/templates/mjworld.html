@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-
+<!-- CSS Styles -->
+<link rel="stylesheet" href="{% static '/page/css/style.css' %}">
+<br>
 {% for mjworld in mjworlds %}
 
-<div class="card" style="width: 18rem;">
+<div class="card col-md-6 center-align">
   <img src="{{ mjworld.image.url }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{ mjworld.title }}</h5>
