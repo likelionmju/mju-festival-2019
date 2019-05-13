@@ -2,15 +2,24 @@
 {% load static %}
 
 {% block content%}
-
-
+<br>
+<br>
 <div class="container col-md-8">
   <div class="card">
     <div class="card-body">
+      {% if user.is_authenticated and user.username == board_detail.author.username %}
+      <div class="btn-group" style="float:right;">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+          <li><a href="{% url 'board_edit' board_detail.id %}" class="dropdown-item">수정</a></li>
+          <li><a href="{% url 'board_delete' board_detail.id %}" class="dropdown-item">삭제</a></li>
+        </ul>
+      </div>
+      {% endif %}
+      <h3>{{ board_detail.title }}</h3>
 
-      <p>
-        <h3>제목: {{ board_detail.title }}</h3>
-      </p>
       <p>작성자: {% if board_detail.author.is_superuser %}
         익명
         {% else %}
@@ -21,9 +30,8 @@
       {% if board_detail.image %}
       <img class="" src="{{ board_detail.image.url }}" alt="image" width="80%">
       {% endif %}
-      <p>
-        <pre>{{ board_detail.content }}</pre>
-      </p>
+      <p>{{ board_detail.content }}</p>
+      <hr>
 
       <!-- comment form -->
       {% if not user.is_authenticated %}
