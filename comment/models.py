@@ -6,7 +6,7 @@ from lost_property.models import Lost
 # Create your models here.
 class BoardComment(models.Model):
     title = models.ForeignKey(Board, on_delete=models.CASCADE, related_name='comments')
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, default=1)
     pub_date = models.DateTimeField('publish')
     content = models.TextField()
 
