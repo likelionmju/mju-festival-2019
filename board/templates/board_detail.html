@@ -62,7 +62,7 @@
         {{comment.content}}</label>
 
       <!--본인 댓글만 삭제 가능-->
-      {% if user.is_authenticated and user.username == board_detail.author.username %}
+      {% if user.is_authenticated and user.username == comment.author.username %}
       <a class="btn-sm float-right" href="{% url 'comment_board_delete' board_detail.id comment.id %}">
         삭제
       </a>
@@ -72,15 +72,6 @@
       {% empty %}
       <label style="color:gray;">아직 댓글이 없습니다</label>
       {% endfor %}
-
-
-      <p class="text-center">
-        <!--본인 글인 경우에만 삭제/수정 가능-->
-        {% if user.is_authenticated and user.username == board_detail.author.username %}
-        <a class="btn btn-info" href="{% url 'board_edit' board_detail.id %}">수정</a>
-        <a class="btn btn-danger" href="{%url 'board_delete' board_detail.id %}">삭제</a>
-        {% endif %}
-      </p>
     </div>
   </div>
 </div>
