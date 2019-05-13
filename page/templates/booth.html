@@ -6,11 +6,16 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(e){
+    $(document).ready(function (e) {
         $('img[usemap]').rwdImageMaps();
     })
 </script>
 <!-- 아래부터 작성하세요 -->
+
+<div>
+    <h5 style="text-align: center;">체험하고 싶은 부스 클릭!</h5>
+
+</div>
 <img src="{% static 'page/images/booth.jpg'%}" alt="부스배치도" usemap="#booth" style="width:100%">
 <map name="booth">
 
@@ -48,5 +53,4 @@
         target="_self" />
 
 </map>
-
 {% endblock %}
