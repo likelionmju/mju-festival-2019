@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Food
 
 # Create your views here.
 def home(request):
@@ -8,7 +9,8 @@ def booth(request):
     return render(request, "booth.html")
 
 def foodtruck(request):
-    return render(request, "foodtruck.html")
+    foods = Food.objects.all()
+    return render(request, "foodtruck.html", {'foods':foods})
 
 def lineup(request):
     return render(request, "lineup.html")
