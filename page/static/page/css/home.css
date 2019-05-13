@@ -61,3 +61,9 @@
     display: block; 
     margin: 0px auto; 
   }
+
+@media only screen and (max-width: 990px) {
+  .guest {
+    width: 49% !important;
+  }
+}
