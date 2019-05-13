@@ -1,72 +1,84 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
+<br>
+<br>
+<div class="container col-md-8">
+  <div class="card">
+    <div class="card-body">
+      {% if user.is_authenticated and user.username == stuff.author.username %}
+      <div class="btn-group" style="float:right;">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+          <li><a href="{% url 'lost_edit' stuff.id %}" class="dropdown-item">수정</a></li>
+          <li><a href="{% url 'lost_delete' stuff.id %}" class="dropdown-item">삭제</a></li>
+        </ul>
+      </div>
+      {% endif %}
+      <h3>{{ stuff.title }}</h3>
 
-  <!-- lost detail -->
-  <h1>{{ stuff.title }}</h1>
-  {% if stuff.author.is_superuser %}
-  <p>익명</p>
-  {% else %}
-  <p>{{ stuff.author }}</p>
-  {% endif %}
-  <p>{{ stuff.pub_date }}</p>
-  {% if stuff.image %}
-  <img class="" src="{{ stuff.image.url }}" alt="image" width="300">
-  {% endif %}
-  <p>{{ stuff.content }}</p>
-  <p>{% if stuff.found == False %}
-    아직 찾는중입니다
-    {% else %}
-    찾음
-    {% endif %}</p>
+      <p>작성자: {% if stuff.author.is_superuser %}
+        익명
+        {% else %}
+        {{ stuff.author }}
+        {% endif %}
+      </p>
+      <p>{{ stuff.pub_date }}</p>
+      {% if stuff.image %}
+      <img class="" src="{{ stuff.image.url }}" alt="image" width="80%">
+      {% endif %}
+      <p>
+        <pre>{{ stuff.content }}</pre>
+      </p>
+      <p style="text-align: center">{% if stuff.found == False %}
+        <i class="far fa-frown" style="color:red"></i>
+        찾는 중
+        {% else %}
+        <i class="far fa-smile style=" color:blue"></i>
+        찾음
+        {% endif %}</p>
+      <hr>
+      <!-- comment form -->
+      {% if not user.is_authenticated %}
+      <a href="{% url 'login' %}">
+        <label style="color:gray;">로그인해야 댓글 삭제가 가능합니다</label>
+      </a>
+      {% endif %}
+      <form method="POST" action="{% url 'comment_lost_new' stuff.id %}">
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="text" name="comment" id="comment" class="form-control" placeholder="댓글 달기...">
+          <span class="input-group-btn">
+            <input class="btn btn-outline-primary" type="submit" value="댓글 달기">
+          </span>
+        </div>
+      </form>
+      <br>
 
-  <!-- comment form -->
-  {% if not user.is_authenticated %}
-  <a href="{% url 'login' %}">
-    <label style="color:gray;">로그인해야 댓글 삭제가 가능합니다</label>
-  </a>
-  {% endif %}
-  <form method="POST" action="{% url 'comment_lost_new' stuff.id %}">
-    {% csrf_token %}
-    <div class="input-group">
-      <input type="text" name="comment" id="comment" class="form-control" placeholder="댓글 달기...">
-      <span class="input-group-btn">
-        <input class="btn btn-outline-primary" type="submit" value="댓글 달기">
-      </span>
+      <!-- comment list -->
+      {% for comment in stuff.comments.all %}
+      <label><strong>
+          {% if comment.author.is_superuser %}
+          익명
+          {% else %}
+          {{ comment.author }}
+          {% endif %}
+        </strong>
+        {{comment.content}}</label>
+
+      <!--본인 댓글만 삭제 가능-->
+      {% if user.is_authenticated and user.username == comment.author.username %}
+      <a class="btn-sm float-right" href="{% url 'comment_lost_delete' stuff.id comment.id %}">
+        삭제
+      </a>
+      {% endif %}
+      <br>
+
+      {% empty %}
+      <label style="color:gray;">아직 댓글이 없습니다</label>
+      {% endfor %}
     </div>
-  </form>
-  <br>
-
-  <!-- comment list -->
-  {% for comment in stuff.comments.all %}
-  <label><strong>
-    {% if comment.author.is_superuser %}
-    익명
-    {% else %}
-    {{ comment.author }}
-    {% endif %}
-  </strong>
-  {{comment.content}}</label>
-
-  <!--본인 댓글만 삭제 가능-->
-  {% if user.is_authenticated and user.username == comment.author.username %}
-  <a class="btn-sm float-right" href="{% url 'comment_lost_delete' stuff.id comment.id %}">
-    삭제
-  </a>
-  {% endif %}
-  <br>
-
-  {% empty %}
-  <label style="color:gray;">아직 댓글이 없습니다</label>
-  {% endfor %}
-  <br>
-  <a class="btn btn-dark" href="{%url 'lost_home'%}">이전으로</a>
-
-  <!--본인 글인 경우에만 삭제/수정 가능-->
-  {% if user.is_authenticated and user.username == stuff.author.username %}
-  <a class="btn btn-info" href="{% url 'lost_edit' stuff.id %}">수정</a>
-  <a class="btn btn-danger" href="{%url 'lost_delete' stuff.id %}">삭제</a>
-  {% endif %}
+  </div>
 </div>
-
 {% endblock %}

@@ -56,27 +56,28 @@
           <a class="nav-link" href="{% url 'bus' %}">버스막차정보</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'lost_home' %}">분실물</a>
+          <a class="nav-link" href="{% url 'lost_home' %}">분실물센터</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'board_home' %}">자유게시판</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'mjworld' %}">심야식당</a>
-          </li>
+          <a class="nav-link" href="{% url 'mjworld' %}">심야식당</a>
+        </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              계정
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% if not user.is_authenticated %}
-              <a class="dropdown-item" href="{% url 'register' %}">회원가입</a>
-              <a class="dropdown-item" href="{% url 'login' %}">로그인</a>
-              {% else %}
-              <a class="dropdown-item" href="{% url 'logout' %}">로그아웃</a>
-              {% endif %}
-            </div>
-          </li>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            계정
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% if not user.is_authenticated %}
+            <a class="dropdown-item" href="{% url 'register' %}">회원가입</a>
+            <a class="dropdown-item" href="{% url 'login' %}">로그인</a>
+            {% else %}
+            <a class="dropdown-item" href="{% url 'logout' %}">로그아웃</a>
+            {% endif %}
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
