@@ -13,6 +13,7 @@
         <div class="col-md-10 center-align">
           <br>
           <h1 class="text-center">회원가입</h1>
+          <p style="color:red; text-align: center">{{message}}</p>
           <form action="{% url 'register' %}" method="POST" enctype="multipart/form-data" class="p-3">
             {% csrf_token %}
             <br>
@@ -40,6 +41,4 @@
     </div>
   </div>
 </div>
-
-
 {% endblock %}
