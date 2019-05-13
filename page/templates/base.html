@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,11 +26,20 @@
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
-  
+  <!--Jquery-->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <!--base.css-->
+  <link rel="stylesheet" href="{% static 'page/css/base.css' %}" type="text/css">
   <style>
-    @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+    @font-face {
+      font-family: 'BMDOHYEON';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     * {
-    font-family: 'BMDOHYEON';
+      font-family: 'BMDOHYEON';
     }
   </style>
 
@@ -86,6 +96,26 @@
   </nav>
   {% block content %}
   {% endblock %}
-</body>
 
+  <!-- Top Scroll Btn -->
+  <a id="MOVE_TOP_BTN" href="#"><i class="fas fa-angle-up fa-2x"></i></a>
+  <script>
+      $(function () {
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 500) {
+            $('#MOVE_TOP_BTN').fadeIn();
+          } else {
+            $('#MOVE_TOP_BTN').fadeOut();
+          }
+        });
+  
+        $("#MOVE_TOP_BTN").click(function () {
+          $('html, body').animate({
+            scrollTop: 0
+          }, 400);
+          return false;
+        });
+      });
+    </script>
+</body>
 </html>
