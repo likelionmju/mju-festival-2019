@@ -10,308 +10,35 @@
   <h1>푸드트럭 소개</h1>
 
   <div class="container">
+    {% for food in foods %}
     <div class="row no-gutters">
       <div class="col-md-4">
         <div class="img-box">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
+        <img src="{{ food.image.url }}" class="card-img" alt="...">
         </div>
       </div>
       <div class="col-md-8">
         <div class="card-title">
-            <h5>츄러스 스페셜에디션</h5>  
+            <h5>{{food.title}}</h5>  
         </div>
         <hr>
         <div class="card-body">
           <div class="row">
             <div class="col-3 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">츄러스, 음료</div>
+            <div class="col col-xl-10">{{food.menu}}</div>
           </div>
           <div class="row">
             <div class="col-3 col-xl-2">가격대</div>
-            <div class="col col-xl-10">2500원</div>
+            <div class="col col-xl-10">{{food.price}}</div>
           </div>
           <div class="row">
             <div class="col-3 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
+            <div class="col col-xl-10">{{food.content}}</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>엉클스쿡</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">닭꼬치, 마약핫도그</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">3500원 / 4000원</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>온스트릿</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">닭강정</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">5000원 / 8000원</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>햅스후</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">불고기바게트버거</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">5000원 / 7000원</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>마쵸타코</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">타코야끼</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">3000원 / 5000원</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>궁럭</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">대창컵밥</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">8900원</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>바람처럼 구름처럼</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">토시살 스테이크</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">9900원</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>꺼야꺼야</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">떡볶이, 분식</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">5000원</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>아이피자유</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">피자</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">10000원</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>미정</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">미정</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">미정</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>미정</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">미정</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">미정</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="http://www.edudaily.co.kr/PEG/14804115707877.jpg" class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-title">
-          <h5>미정</h5>  
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-2 col-xl-2">메뉴</div>
-            <div class="col col-xl-10">미정</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">가격대</div>
-            <div class="col col-xl-10">미정</div>
-          </div>
-          <div class="row">
-            <div class="col-2 col-xl-2">소개</div>
-            <div class="col col-xl-10">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 
 
