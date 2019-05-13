@@ -38,6 +38,11 @@
         <i class="far fa-smile style=" color:blue"></i>
         찾음
         {% endif %}</p>
+        {% if stuff.found == False and user.is_authenticated and user.username == stuff.author.username  %}
+        <p class="text-center">
+            <a class="btn btn-primary" href="{% url 'lost_found' stuff.id %}" role="button">찾았어요!</a>
+        </p>
+        {% endif %}
       <hr>
       <!-- comment form -->
       {% if not user.is_authenticated %}

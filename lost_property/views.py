@@ -48,3 +48,9 @@ def edit(request, stuff_id):
             return render(request, 'lost_edit.html', {'stuff':stuff})
         else:
             return redirect('lost_home')
+
+def found(request, stuff_id):
+    stuff = get_object_or_404(Lost, pk=stuff_id)
+    stuff.found = True
+    stuff.save()
+    return redirect('lost_home')
