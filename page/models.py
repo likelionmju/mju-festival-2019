@@ -7,3 +7,6 @@ class Food(models.Model):
     menu = models.CharField(max_length=20)
     price = models.CharField(max_length=20)
     content = models.TextField()
+    
+    def __str__(self):
+        return self.title
