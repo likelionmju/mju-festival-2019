@@ -71,3 +71,9 @@
 .carousel-inner {
     margin-bottom : 15px;
 }
+
+@media only screen and (max-width: 1024px){
+    .guest {
+      width: 49% !important;
+    }
+  }
