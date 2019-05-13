@@ -17,14 +17,20 @@
                     <div class="card-body">
                         <h3 class="card-title">{{booth.title}}</h3>
                         <h5>{{booth.description}}</h5>
+                        {% if booth.time %}
                         <h6>운영 시간 : {{booth.time}}</h6>
+                        {% endif %}
+                        {% if booth.subtitle1 %}
                         <h6 class="subtitle">{{booth.subtitle1}}</h6>
                         {{booth.content1|linebreaks}}
+                        {% endif %}
                         {% if booth.subtitle2 %}
                         <h6 class="subtitle">{{booth.subtitle2}}</h6>
                         {{booth.content2|linebreaks}}
                         {% endif %}
+                        {% if booth.location%}
                         <h6>위치 : {{booth.location}}</h6>
+                        {% endif %}
                         {% if booth.hyperlink %}
                         <h6>더 자세한 정보를 얻고 싶다면? <a href="{{booth.hyperlink}}">CLICK ME!</a></h6>
                         {% endif %}
