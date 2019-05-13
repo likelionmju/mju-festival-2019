@@ -25,7 +25,13 @@
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
-
+  
+  <style>
+    @font-face { font-family: 'BMDOHYEON'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff'); font-weight: normal; font-style: normal; }
+    * {
+    font-family: 'BMDOHYEON';
+    }
+  </style>
 
 </head>
 
@@ -51,9 +57,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'booth' %}">부스안내</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'bus' %}">버스막차정보</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'lost_home' %}">분실물센터</a>
