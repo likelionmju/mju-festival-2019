@@ -11,7 +11,9 @@ div.card{
 div h3{
     text-align: center;
     font-weight: bold;
-    margin-bottom: 20px!important;
+}
+.card-title{
+    margin-bottom:20px;
 }
 div img{
     padding:10px;
@@ -40,4 +42,21 @@ div.row{
 .boothtop{
     width: 100px;
     height: auto;
+}
+img{
+    max-width:100%; max-height:100%;
+    width:auto; height:auto;
+}
+@media (min-width: 768px) {
+    .card-img {
+        max-width:100%; max-height:100%;
+        width:auto; height:auto;
+        margin:auto;
+        top:0; bottom:0; left:0; right:0;
+    
+    }
+    
+    .col-md-4 {
+        position:relative;
+    }
 }
