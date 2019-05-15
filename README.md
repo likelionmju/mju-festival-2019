@@ -67,15 +67,7 @@ pip install django
 
 ```
 pip install Pillow
-```
-
-다운로드 후, 직군에 맞는 브랜치로 checkout합니다.
-
--	Front-end: feature-front
--	Back-end: feature-back
-
-```
-git checkout 브랜치명
+pip install gunicorn dj-database-url psycopg2-binary whitenoise
 ```
 
 ### 3. Django에서 자주 사용되는 명령어
