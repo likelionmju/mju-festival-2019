@@ -23,6 +23,8 @@
 
 -	Project manager: 반정훈, 한종우
 
+-	Server manager: 한종우
+
 -	Front-end: 김혜현, 박건희, 서유림, 최은지, 함범준
 
 -	Back-end: 변현홍, 조형서, 황낙주
