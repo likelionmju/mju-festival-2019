@@ -3,6 +3,18 @@
 
 ![Version](https://img.shields.io/badge/Version-1.0.0-green.svg) ![Django](https://img.shields.io/badge/Python-Django-darkgreen.svg) ![Likelion](https://img.shields.io/badge/Likelion-MJU(Seoul)-informational.svg)
 
+### 0. 서비스 점검 안내
+
+---
+
+2019 명지대학교 인문캠퍼스 대동제 소개 서비스가 잠시 점검의 시간을 가지게 되었습니다.
+
+#### 서비스 점검 개요
+
+-	점검 일시 : 5월 17일 오전 12시 ~ 6월 1일 오전 12시
+
+-	서비스 오픈 예정 시간 : 6월 1일 오전 12시
+
 ### 1. INFO
 
 ---
