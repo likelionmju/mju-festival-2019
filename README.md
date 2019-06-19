@@ -77,7 +77,7 @@ source venv/bin/activate
 pip install django
 ```
 
-그다음, 프로젝트에서 필요한 pip 패키지들을 다운로드해 줍니다.
+그다음, 현재 프로젝트에서 필요한 pip 패키지들을 다운로드해 줍니다.
 
 ```
 pip install Pillow
