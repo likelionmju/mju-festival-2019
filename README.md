@@ -1,7 +1,7 @@
 2019 명지대학교 인문캠퍼스 대동제 소개 서비스
 ---------------------------------------------
 
-![Version](https://img.shields.io/badge/Version-1.0.0-green.svg) ![Django](https://img.shields.io/badge/Python-Django-darkgreen.svg) ![Likelion](https://img.shields.io/badge/Likelion-MJU(Seoul)-informational.svg)
+![Version](https://img.shields.io/badge/Version-1.0.0-green.svg) ![Build](https://img.shields.io/badge/Build-Passing-success.svg) ![Django](https://img.shields.io/badge/Python-Django-darkgreen.svg) ![Likelion](https://img.shields.io/badge/Likelion-MJU(Seoul)-9cf.svg) ![License](https://img.shields.io/badge/License-MIT-informational.svg)
 
 ### 1. INFO
 
